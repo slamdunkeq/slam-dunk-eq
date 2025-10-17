@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+my_venv/
+venv/
+ENV/
+env/
+/my_venv/
+/.claude/
+
+# Debug files
+debug_original.png
+debug_processed.png
+
+# Build artifacts
+build/
+*.spec
+*.ico
+build_log.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+nul
+
+# OS
+.DS_Store
+Thumbs.db
