@@ -4,7 +4,7 @@ A powerful GUI application that monitors screen areas for changes using two dete
 
 ## Warning!!
 
-I cannot recommend using this application on servers that do not allow for automation, especially the Project 1999 Classic Everquest Server which has the best meta ever that you would only be cheating yourself out of if you use this.
+I cannot recommend using this application on servers that do not allow for automation. This is particularly true for the Project 1999 Classic Everquest Server. That server best raiding meta ever, you would only be cheating yourself if you use this.
 
 ## Quickstart - TRACK Mode
 
