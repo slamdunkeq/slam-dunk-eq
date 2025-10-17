@@ -2,6 +2,12 @@
 
 A powerful GUI application that monitors screen areas for changes using two detection modes with customizable trigger actions. Perfect for gaming, monitoring applications, or automating responses to screen events.
 
+## Warning!!
+
+I cannot recommend using this application on servers that do not allow for automation, especially the Project 1999 Classic Everquest Server which has the best meta ever that you would only be cheating yourself out of if you use this.
+
+![Quick Start Guide](Quick%20Start.png)
+
 ## Features
 
 ### 🔍 COTH Mode (Change Over Threshold)
@@ -29,6 +35,7 @@ When a trigger is detected, execute multiple actions in sequence:
 - **⏱️ Delay** - Adds timed delays between actions
 
 **Actions are:**
+
 - Fully customizable and can be reordered
 - Executed sequentially in the order you define
 - Can be enabled/disabled individually
@@ -51,6 +58,7 @@ When a trigger is detected, execute multiple actions in sequence:
 3. Double-click `ScreenMonitor.exe` to run
 
 **Why install Tesseract separately?**
+
 - Keeps the executable small (82 MB vs 500+ MB)
 - Tesseract is maintained independently with regular updates
 - You can use the same Tesseract installation for other applications
@@ -85,11 +93,13 @@ python screen_monitor.py
 #### Windows Installation:
 
 1. **Download Tesseract:**
+
    - Visit: https://github.com/UB-Mannheim/tesseract/wiki
    - Download the latest Windows installer (recommended: 64-bit version)
    - File size: ~80 MB
 
 2. **Run the installer:**
+
    - Double-click the downloaded installer
    - Follow the installation wizard
    - Use the default installation location for automatic detection
@@ -101,10 +111,12 @@ python screen_monitor.py
 
 **Automatic Detection:**
 The application automatically detects Tesseract in these locations:
+
 - `C:\Program Files\Tesseract-OCR\tesseract.exe`
 - `C:\Program Files (x86)\Tesseract-OCR\tesseract.exe`
 
 **What happens if Tesseract is not installed?**
+
 - COTH mode works without it
 - When you try to use TRACK mode, a friendly dialog will:
   - Explain what Tesseract is
@@ -118,14 +130,17 @@ The application automatically detects Tesseract in these locations:
 ### Basic Setup
 
 1. **Start the application:**
+
    - **Executable:** Double-click `ScreenMonitor.exe`
    - **Python:** Run `python screen_monitor.py`
 
 2. **Select a monitoring mode:**
+
    - **COTH Mode**: For detecting visual changes (color/pixel changes)
    - **TRACK Mode**: For detecting specific text (requires Tesseract OCR)
 
 3. **Define watch area:**
+
    - Click and drag to select the area on your screen you want to monitor
    - Release to confirm selection
    - You can edit the watch area later if needed
@@ -141,10 +156,12 @@ The application automatically detects Tesseract in these locations:
 Once monitoring starts, you can configure what happens when a trigger is detected:
 
 1. **View Current Actions:**
+
    - The "Trigger Actions" section shows all configured actions
    - Default: Alarm sound is enabled
 
 2. **Add Actions:**
+
    - Click **"+ Add Action"** button
    - Choose from:
      - **Focus Window**: Select a window to bring to foreground
@@ -152,6 +169,7 @@ Once monitoring starts, you can configure what happens when a trigger is detecte
      - **Delay**: Add a timed pause (in milliseconds)
 
 3. **Manage Actions:**
+
    - **Reorder**: Use ▲▼ arrows to change execution order
    - **Enable/Disable**: Check/uncheck to toggle individual actions
    - **Delete**: Click ✕ to remove an action
@@ -164,10 +182,12 @@ Once monitoring starts, you can configure what happens when a trigger is detecte
 ### During Monitoring
 
 - **Status Display**: Shows real-time detection information
+
   - COTH: Shows pixel change percentage
   - TRACK: Shows detected words and OCR processing time
 
 - **Edit Settings**: While monitoring, you can:
+
   - Edit watch area (Show/Edit button)
   - Edit watch words (TRACK mode only)
   - Modify trigger actions
@@ -200,6 +220,7 @@ Once monitoring starts, you can configure what happens when a trigger is detecte
   - COTH mode has no external dependencies
 
 **File Sizes:**
+
 - `ScreenMonitor.exe`: 82 MB
 - Tesseract OCR installer: ~80 MB
 
@@ -267,12 +288,14 @@ The executable will be created in the `dist` folder.
 ### Installation Issues
 
 **Executable won't start:**
+
 - Ensure you're running Windows 10 or higher
 - Check that your antivirus isn't blocking the exe
 - Try running as administrator
 - Make sure you have the Visual C++ Redistributable installed
 
 **Tesseract installation fails:**
+
 - Download from the official source: https://github.com/UB-Mannheim/tesseract/wiki
 - Choose the 64-bit installer for modern systems
 - Disable antivirus temporarily during installation
@@ -281,6 +304,7 @@ The executable will be created in the `dist` folder.
 ### Detection Issues
 
 **TRACK mode not detecting text:**
+
 - **First, check Tesseract:**
   - Verify installation: `tesseract --version`
   - Ensure it's in default location or added to PATH
@@ -292,11 +316,13 @@ The executable will be created in the `dist` folder.
   - Test with simple, large text first
 
 **COTH mode triggering too often:**
+
 - The area might include animated elements
 - Try selecting a more specific area
 - Consider using TRACK mode instead if monitoring text
 
 **COTH mode not triggering:**
+
 - Ensure the watched area actually changes
 - Check that changes are significant (>50% pixels, >5% brightness)
 - Try a test with a dramatic visual change first
@@ -304,18 +330,21 @@ The executable will be created in the `dist` folder.
 ### Trigger Action Issues
 
 **Key presses not working:**
+
 - Make sure the target window has focus (use Focus Window action first)
 - Some games/applications block simulated input
 - Try adding a delay (150-300ms) before key presses
 - Run the application as administrator for better input compatibility
 
 **Window focus not working:**
+
 - The target window must be visible (not minimized)
 - Some fullscreen applications can't be focused externally
 - Try running Slam Dunk EQ as administrator
 - Refresh the window list if a new window appeared
 
 **Actions not executing in correct order:**
+
 - Check the arrow buttons - order matters!
 - Use delays between actions if timing is critical
 - Verify all actions are enabled (checkboxes)
@@ -323,12 +352,14 @@ The executable will be created in the `dist` folder.
 ### Performance Issues
 
 **High CPU usage:**
+
 - Normal in TRACK mode when screen changes frequently
 - OCR only runs when content changes (check status display)
 - Consider using a smaller watch area
 - COTH mode uses minimal CPU
 
 **OCR is slow:**
+
 - Reduce watch area size for faster processing
 - Close unnecessary applications
 - Ensure Tesseract is installed (not using fallback)
@@ -337,18 +368,21 @@ The executable will be created in the `dist` folder.
 ### Other Issues
 
 **Alarm not playing:**
+
 - Check your system volume
 - Ensure Windows sound services are running
 - Some systems don't support the beep function
 - Try enabling/disabling in trigger actions
 
 **Application crashes:**
+
 - Check if Tesseract is properly installed (for TRACK mode)
 - Try running as administrator
 - Check Windows Event Viewer for error details
 - Report bugs with full error messages
 
 **Can't select certain screen areas:**
+
 - Some applications block screen capture (DRM content)
 - Try windowed mode instead of fullscreen
 - Some games require admin privileges to capture
@@ -356,6 +390,7 @@ The executable will be created in the `dist` folder.
 ### Getting Help
 
 If you encounter issues not listed here:
+
 1. Check that you're using the latest version
 2. Verify all prerequisites are installed
 3. Try with a simple test case first
@@ -369,16 +404,19 @@ If you encounter issues not listed here:
 ### Gaming
 
 **Auto-loot in EverQuest:**
+
 - Use TRACK mode to watch for "corpse" text
 - Actions: Focus game → Delay 150ms → Press 'E' 3 times
 - Never miss loot opportunities!
 
 **Boss respawn alerts:**
+
 - Use COTH mode on spawn location
 - Actions: Sound alarm → Focus game window
 - Get notified immediately when boss appears
 
 **Chat monitoring:**
+
 - Use TRACK mode on chat window for keywords
 - Watch for: "raid", "group", "invite", your character name
 - Actions: Sound alarm to get your attention
@@ -386,16 +424,19 @@ If you encounter issues not listed here:
 ### Application Monitoring
 
 **Build completion:**
+
 - Use TRACK mode on build status area
 - Watch for: "success", "failed", "completed"
 - Actions: Sound alarm → Focus IDE window
 
 **Error detection:**
+
 - Use TRACK mode on log window
 - Watch for: "error", "exception", "failed"
 - Actions: Alarm + focus window for immediate attention
 
 **System notifications:**
+
 - Use COTH mode on notification area
 - Detect when new notifications appear
 - Actions: Custom response based on your workflow
@@ -403,11 +444,13 @@ If you encounter issues not listed here:
 ### Automation
 
 **Form submission:**
+
 - Use TRACK mode to detect success message
 - Actions: Delay 1000ms → Press 'Enter' → Focus next app
 - Chain actions together
 
 **Multi-window workflows:**
+
 - Detect completion in one app
 - Actions: Focus another app → Send keyboard commands
 - Automate repetitive multi-app tasks
@@ -415,6 +458,7 @@ If you encounter issues not listed here:
 ## Version History
 
 ### Current Version
+
 - **Size:** 82 MB (84% smaller than v1.0)
 - **OCR Engine:** Tesseract (replaced PaddleOCR)
 - **New Features:**
